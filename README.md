@@ -24,11 +24,5 @@
     voices = engine.getProperty('voices') <br />
     engine.setProperty('voice', voices[0].id) <br />
     Recognize speech input from the microphone <br />
-* #### Applications :
-    Transcribe an audio file <br />
-    Save audio data to an audio file <br />
-    Show extended recognition results <br />
-    Calibrate the recognizer energy threshold for ambient noise levels (see recognizer_instance.energy_threshold for details) <br />
-    Listening to a microphone in the background <br />
-    Various other useful recognizer features <br />
+
     
