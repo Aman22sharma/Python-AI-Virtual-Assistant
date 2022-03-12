@@ -89,6 +89,17 @@ def main():
         chrome_path = 'c:/program Files (x86)/Google/Chrome/Application/chrome.exe %s'
         webbrowser.get(chrome_path).open(url)
 
+    elif 'open netflix' in query.lower():
+	url = "netflix.in"
+	chrome_path = 'c:/program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+	webbrowser.get(chrome_path).open(url)
+
+    elif 'open amazon' in query.lower():
+	url = "amazon.in"
+	chrome_path = 'c:/program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+	webbrowser.get(chrome_path).open(url)
+
+
     elif 'play music' in query.lower():
         songs_dir = "C:\\Users\\Dell\\Desktop\\Photos\\audio"
         songs = os.listdir(songs_dir)
