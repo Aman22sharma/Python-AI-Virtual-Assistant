@@ -18,6 +18,7 @@ def speak(text):
     engine.runAndWait()
 
 #This funtion will wish you as per the current time
+#we can also call this function automatically at certain time also
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     print(hour)
