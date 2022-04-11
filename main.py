@@ -5,6 +5,8 @@ import wikipedia #pip install wikipedia
 import webbrowser
 import os
 import smtplib
+import datetime
+import time
 
 print("Initializing Jarvis")
 MASTER = "Aman"
@@ -18,20 +20,24 @@ def speak(text):
     engine.runAndWait()
 
 #This funtion will wish you as per the current time
-def wishMe():
-    hour = int(datetime.datetime.now().hour)
-    print(hour)
 
-    if hour>=0 and hour <12:
-        speak("good morning" + MASTER)
-
-    elif hour>=12 and hour<18:
-        speak("good afternoon" + MASTER)
-
-    else:
-        speak("good Evening" + MASTER)
-
-    speak("i am your assistant. How may I help you?")
+hour = datetime.datetime.now().strftime("%I")
+am_or_pm = datetime.datetime.now().strftime("%p")
+morning = False
+afternoon = False
+evening = False
+night = False
+while True:
+    if int(hour) >= 5 and am_or_pm == "AM" and morning == False:
+        pyttsx3.speak("Good morning sir")
+        morning = True
+    elif int(hour) == 12 and am_or_pm == "PM" and afternoon == False:
+        pyttsx3.speak("Good afternoon sir")
+        afternoon = True
+    elif int(hour) >= 4 and am_or_pm == "PM" and evening == False:
+        pyttsx3.speak("Good evening sir")
+        evening = True
+    time.sleep(10)
 
 def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
